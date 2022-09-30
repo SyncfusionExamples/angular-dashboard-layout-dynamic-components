@@ -1,0 +1,58 @@
+<div class="control-section">
+  <div style="padding:5px;text-align: right;">
+    <button id="add" class="e-btn e-info" (click)="addPanel()">
+      Add Panel
+    </button>
+  </div>
+  <ejs-dashboardlayout
+    id="default_dashboard"
+    #default_dashboard
+    columns="2"
+    [allowResizing]="true"
+    [cellSpacing]="cellSpacing"
+  >
+    <e-panels>
+      <e-panel
+        *ngFor="let panel of panelsData"
+        [id]="panel.id"
+        [sizeX]="panel.sizeX"
+        [sizeY]="panel.sizeY"
+        [row]="panel.row"
+        [col]="panel.col"
+      >
+        <ng-template #content>
+          <span
+            style="float:right; margin-right:40px;padding-top:10px;font-weight: bold;"
+            (click)="addWidget($event)"
+            >ⓘ</span
+          >
+          <span
+            id="close"
+            class="e-template-icon e-close-icon"
+            (click)="onCloseIconHandler($event)"
+          ></span>
+          <div class="e-panel-container">
+            <div class="text-align" [id]="panel.index">
+              <ng-template #template> </ng-template>
+            </div></div
+        ></ng-template>
+      </e-panel>
+    </e-panels>
+  </ejs-dashboardlayout>
+
+  <div id="template"></div>
+  <div id="modalDialog"></div>
+  <div id="dialogcontent">
+    <div>
+      <div id="linetemplate">
+        <p class="dialog-text">Linechart (1x1)</p>
+      </div>
+      <div id="bartemplate">
+        <p class="dialog-text">Barchart (1x1)</p>
+      </div>
+      <div id="gridtemplate">
+        <p class="dialog-text">Grid (2x1)</p>
+      </div>
+    </div>
+  </div>
+</div>
