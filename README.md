@@ -1,4 +1,4 @@
-# angular-dashboard-layout-dynamic-components
+# Angular-dashboard-layout-dynamic-components
 
 **Repository Description**  
 This repository contains an Angular sample application generated using Angular CLI that demonstrates how to build dynamic dashboard layouts using Angular components.
